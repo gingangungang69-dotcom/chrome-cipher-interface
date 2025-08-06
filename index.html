@@ -1,24 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>chrome-cipher-interface</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberChat - AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <header class="sidebar-header">
+                <h1 class="sidebar-title">CyberChat</h1>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <div class="toggle-line"></div>
+                    <div class="toggle-line"></div>
+                    <div class="toggle-line"></div>
+                </button>
+            </header>
 
-    <meta property="og:title" content="chrome-cipher-interface" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+            <button class="new-chat-btn" id="newChatBtn">
+                <span class="plus-icon">+</span>
+                <span>New Chat</span>
+            </button>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+            <div class="chat-history">
+                <h3>Recent Chats</h3>
+                <div class="chat-list" id="chatList">
+                    <!-- Chat history items will be inserted here -->
+                </div>
+            </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+            <footer class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">U</div>
+                    <span class="user-name">User</span>
+                </div>
+            </footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="chat-container">
+                <div class="messages" id="messages">
+                    <!-- Initial message -->
+                    <div class="message assistant-message">
+                        <div class="message-avatar assistant-avatar">
+                            <span>🤖</span>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-text">Hello! I'm your AI assistant. How can I help you today?</div>
+                            <div class="message-footer">
+                                <span class="message-time" id="currentTime">--:--</span>
+                                <div class="message-actions">
+                                    <button class="action-btn copy-btn" onclick="copyMessage(this)">📋</button>
+                                    <button class="action-btn like-btn">👍</button>
+                                    <button class="action-btn dislike-btn">👎</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading message -->
+                <div class="loading-message" id="loadingMessage" style="display: none;">
+                    <div class="message-avatar assistant-avatar">
+                        <span>🤖</span>
+                    </div>
+                    <div class="message-content">
+                        <div class="typing-indicator">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message here..." 
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    Press Enter to send, Shift + Enter for new line
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
