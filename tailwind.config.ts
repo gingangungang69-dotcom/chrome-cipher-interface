@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-purple': 'hsl(var(--neon-purple))',
+				'neon-pink': 'hsl(var(--neon-pink))',
+				'cyber-dark': 'hsl(var(--cyber-dark))',
+				'cyber-darker': 'hsl(var(--cyber-darker))',
+				'cyber-border': 'hsl(var(--cyber-border))'
+			},
+			boxShadow: {
+				'glow-cyan': 'var(--glow-cyan)',
+				'glow-purple': 'var(--glow-purple)',
+				'glow-pink': 'var(--glow-pink)'
+			},
+			transitionTimingFunction: {
+				'cyber': 'cubic-bezier(0.23, 1, 0.32, 1)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
